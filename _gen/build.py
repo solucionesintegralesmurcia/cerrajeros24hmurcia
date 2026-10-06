@@ -800,7 +800,7 @@ def build_legales():
 <li>Sitio web: cerrajero24horasmurcia.es</li>
 </ul>
 <h2>Objeto y naturaleza del servicio</h2>
-<p>Este sitio web ofrece un servicio de intermediación que pone en contacto a los usuarios que necesitan un servicio de cerrajería con profesionales cerrajeros colaboradores que trabajan en el municipio de Murcia. Los trabajos de cerrajería los presta, factura y garantiza el profesional que los realiza, que es quien informa del precio al usuario antes de prestar el servicio.</p>
+<p>Este sitio web ofrece un servicio de intermediación que pone en contacto a los usuarios que necesitan un servicio de cerrajería con profesionales cerrajeros colaboradores que trabajan en Murcia y municipios cercanos. Los trabajos de cerrajería los presta, factura y garantiza el profesional que los realiza, que es quien informa del precio al usuario antes de prestar el servicio.</p>
 <h2>Condiciones de uso</h2>
 <p>El acceso a este sitio web es gratuito. El usuario se compromete a hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas o contrarias a la buena fe.</p>
 <h2>Propiedad intelectual</h2>
