@@ -6,9 +6,9 @@ Busca y reemplaza en **todos** los archivos `.html`:
 
 | Busca | Pon | Ejemplo |
 |---|---|---|
-| `+34639311161` | Teléfono para llamar, con +34 | `+34968123456` |
-| `639 31 11 61` | Teléfono tal como se lee | `968 12 34 56` |
-| `34639311161` | Número de WhatsApp sin + | `34612345678` |
+| `+34XXXXXXXXX` | Teléfono para llamar, con +34 | `+34968123456` |
+| `XXX XX XX XX` | Teléfono tal como se lee | `968 12 34 56` |
+| `34XXXXXXXXX` | Número de WhatsApp sin + | `34612345678` |
 | `[NOMBRE Y APELLIDOS O RAZÓN SOCIAL DEL TITULAR]` | Titular | — |
 | `[NIF]` | NIF del titular | — |
 | `[DOMICILIO FISCAL]` | Domicilio fiscal | — |
