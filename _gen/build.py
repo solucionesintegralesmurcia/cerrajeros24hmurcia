@@ -9,7 +9,7 @@ NAME = "Cerrajero 24 Horas en Murcia"
 TEL_LINK = "+34622663157"     # p. ej. +34968123456
 TEL_TXT = "622 66 31 57"      # p. ej. 968 12 34 56
 WA = "34622663157"            # p. ej. 34612345678 (sin +)
-EMAIL = "info@cerrajero24horasmurcia.es"
+EMAIL = "murciacerrajerourgente@gmail.com"
 UPDATED = "2026-10-06"
 CSS_VER = hashlib.md5(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "styles.css"), "rb").read()).hexdigest()[:8]
 import sys as _s0; _s0.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -797,6 +797,7 @@ def build_legales():
 <li>Titular: {TITULAR}, que opera con el nombre comercial {NAME}</li>
 <li>Domicilio: {DOMICILIO}</li>
 <li>Teléfono: {TEL_TXT}</li>
+<li>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></li>
 <li>Sitio web: cerrajero24horasmurcia.es</li>
 </ul>
 <h2>Objeto y naturaleza del servicio</h2>
@@ -813,7 +814,7 @@ def build_legales():
 
     legal("politica-privacidad.html", "Política de Privacidad | Cerrajero 24 Horas en Murcia", "Política de privacidad", f"""
 <h2>Responsable del tratamiento</h2>
-<p>{TITULAR}, con domicilio en {DOMICILIO}. Teléfono de contacto: {TEL_TXT}.</p>
+<p>{TITULAR}, con domicilio en {DOMICILIO}. Teléfono de contacto: {TEL_TXT}. Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h2>Qué datos tratamos</h2>
 <p>Cuando nos llamas, nos escribes por WhatsApp o nos envías el formulario de aviso urgente (que se envía a través de WhatsApp) tratamos tu número de teléfono, tu nombre si nos lo das, la dirección donde necesitas el servicio y la información que nos cuentes sobre la incidencia.</p>
 <h2>Para qué los usamos</h2>
@@ -830,7 +831,7 @@ def build_legales():
 <h2>Cuánto tiempo los conservamos</h2>
 <p>El tiempo necesario para atender tu solicitud y, después, durante los plazos en que puedan derivarse responsabilidades legales.</p>
 <h2>Tus derechos</h2>
-<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad contactando con el responsable en el teléfono {TEL_TXT} o por WhatsApp. Si consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>""",
+<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:{EMAIL}">{EMAIL}</a> o contactando con el responsable en el teléfono {TEL_TXT} o por WhatsApp. Si consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>""",
           "Política de privacidad de cerrajero24horasmurcia.es: qué datos tratamos al atender tu llamada, para qué, con quién se comparten y tus derechos.")
 
     legal("politica-cookies.html", "Política de Cookies | Cerrajero 24 Horas en Murcia", "Política de cookies", f"""
