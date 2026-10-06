@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Genera la web estática de cerrajeros24horasmurcia.es en ../web"""
+"""Genera la web estática de cerrajero24horasmurcia.es en la raíz del repositorio"""
 import json, os, html
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-DOM = "https://cerrajeros24horasmurcia.es"
+DOM = "https://cerrajero24horasmurcia.es"
 NAME = "Cerrajero 24 Horas en Murcia"
 # --- Datos que debe cambiar el propietario (buscar y reemplazar) ---
 TEL_LINK = "+34622663157"     # p. ej. +34968123456
 TEL_TXT = "622 66 31 57"      # p. ej. 968 12 34 56
 WA = "34622663157"            # p. ej. 34612345678 (sin +)
-EMAIL = "info@cerrajeros24horasmurcia.es"
+EMAIL = "info@cerrajero24horasmurcia.es"
 UPDATED = "2026-10-06"
 import sys as _s0; _s0.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from extra_content import EXTRA, EXTRA_FAQ
@@ -772,7 +772,7 @@ def build_legales():
 <li>Titular: {TITULAR}, que opera con el nombre comercial {NAME}</li>
 <li>Domicilio: {DOMICILIO}</li>
 <li>Teléfono: {TEL_TXT}</li>
-<li>Sitio web: cerrajeros24horasmurcia.es</li>
+<li>Sitio web: cerrajero24horasmurcia.es</li>
 </ul>
 <h2>Objeto y naturaleza del servicio</h2>
 <p>Este sitio web ofrece un servicio de intermediación que pone en contacto a los usuarios que necesitan un servicio de cerrajería con profesionales cerrajeros colaboradores que trabajan en el municipio de Murcia. Los trabajos de cerrajería los presta, factura y garantiza el profesional que los realiza, que es quien informa del precio al usuario antes de prestar el servicio.</p>
@@ -784,7 +784,7 @@ def build_legales():
 <p>El titular procura que la información de este sitio sea correcta y esté actualizada, pero no garantiza la ausencia de errores. La información sobre cerraduras y seguridad tiene carácter orientativo; la valoración de cada caso corresponde al profesional que lo atiende.</p>
 <h2>Legislación aplicable</h2>
 <p>Este aviso legal se rige por la legislación española.</p>""",
-          "Aviso legal de cerrajeros24horasmurcia.es: datos del titular, naturaleza del servicio de intermediación y condiciones de uso.")
+          "Aviso legal de cerrajero24horasmurcia.es: datos del titular, naturaleza del servicio de intermediación y condiciones de uso.")
 
     legal("politica-privacidad.html", "Política de Privacidad | Cerrajero 24 Horas en Murcia", "Política de privacidad", f"""
 <h2>Responsable del tratamiento</h2>
@@ -804,7 +804,7 @@ def build_legales():
 <p>El tiempo necesario para atender tu solicitud y, después, durante los plazos en que puedan derivarse responsabilidades legales.</p>
 <h2>Tus derechos</h2>
 <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad contactando con el responsable en el teléfono {TEL_TXT} o por WhatsApp. Si consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>""",
-          "Política de privacidad de cerrajeros24horasmurcia.es: qué datos tratamos al atender tu llamada, para qué, con quién se comparten y tus derechos.")
+          "Política de privacidad de cerrajero24horasmurcia.es: qué datos tratamos al atender tu llamada, para qué, con quién se comparten y tus derechos.")
 
     legal("politica-cookies.html", "Política de Cookies | Cerrajero 24 Horas en Murcia", "Política de cookies", f"""
 <h2>¿Usa cookies este sitio web?</h2>
@@ -813,7 +813,7 @@ def build_legales():
 <p>Los botones de WhatsApp abren la aplicación o la web de WhatsApp, que tiene su propia política de privacidad y de cookies.</p>
 <h2>Cambios en esta política</h2>
 <p>Si en el futuro se incorporan herramientas que usen cookies, como estadísticas de visitas, se actualizará esta página y se pedirá tu consentimiento cuando sea necesario.</p>""",
-          "Política de cookies de cerrajeros24horasmurcia.es: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.")
+          "Política de cookies de cerrajero24horasmurcia.es: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.")
 
 
 # ============================================================ 404

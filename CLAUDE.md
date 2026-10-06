@@ -1,4 +1,4 @@
-# cerrajeros24horasmurcia.es
+# cerrajero24horasmurcia.es
 
 Web estática en HTML con una hoja de estilos común (`styles.css`), desplegada en Vercel desde `main`.
 
