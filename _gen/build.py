@@ -794,9 +794,8 @@ def build_legales():
 <h2>Titular del sitio web</h2>
 <p>En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:</p>
 <ul class="list">
-<li>Titular: {TITULAR}, que opera con el nombre comercial {NAME}</li>
+<li>Titular: {NAME}</li>
 <li>Domicilio: {DOMICILIO}</li>
-<li>Teléfono: {TEL_TXT}</li>
 <li>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></li>
 <li>Sitio web: cerrajero24horasmurcia.es</li>
 </ul>
@@ -814,7 +813,7 @@ def build_legales():
 
     legal("politica-privacidad.html", "Política de Privacidad | Cerrajero 24 Horas en Murcia", "Política de privacidad", f"""
 <h2>Responsable del tratamiento</h2>
-<p>{TITULAR}, con domicilio en {DOMICILIO}. Teléfono de contacto: {TEL_TXT}. Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<p>{NAME}, con domicilio en {DOMICILIO}. Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h2>Qué datos tratamos</h2>
 <p>Cuando nos llamas, nos escribes por WhatsApp o nos envías el formulario de aviso urgente (que se envía a través de WhatsApp) tratamos tu número de teléfono, tu nombre si nos lo das, la dirección donde necesitas el servicio y la información que nos cuentes sobre la incidencia.</p>
 <h2>Para qué los usamos</h2>
@@ -831,7 +830,7 @@ def build_legales():
 <h2>Cuánto tiempo los conservamos</h2>
 <p>El tiempo necesario para atender tu solicitud y, después, durante los plazos en que puedan derivarse responsabilidades legales.</p>
 <h2>Tus derechos</h2>
-<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:{EMAIL}">{EMAIL}</a> o contactando con el responsable en el teléfono {TEL_TXT} o por WhatsApp. Si consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>""",
+<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:{EMAIL}">{EMAIL}</a>. Si consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>""",
           "Política de privacidad de cerrajero24horasmurcia.es: qué datos tratamos al atender tu llamada, para qué, con quién se comparten y tus derechos.")
 
     legal("politica-cookies.html", "Política de Cookies | Cerrajero 24 Horas en Murcia", "Política de cookies", f"""
