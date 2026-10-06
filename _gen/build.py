@@ -161,7 +161,8 @@ def page(slug, title, desc, body, schemas, robots="index,follow", root="", og_ty
     if ph and os.path.exists(os.path.join(OUT, "img", ph[0])):
         from PIL import Image as _I
         w, h = _I.open(os.path.join(OUT, "img", ph[0])).size
-        img = f'<img class="photo" src="img/{ph[0]}" alt="{ph[1]}" width="{w}" height="{h}" loading="lazy">'
+        iv = hashlib.md5(open(os.path.join(OUT, "img", ph[0]), "rb").read()).hexdigest()[:8]
+        img = f'<img class="photo" src="img/{ph[0]}?v={iv}" alt="{ph[1]}" width="{w}" height="{h}" loading="lazy">'
         if len(ph) > 2 and ph[2]:
             img = f'<a href="tel:{TEL_LINK}" aria-label="Llamar al cerrajero 24 horas">{img}</a>'
         figure = f'<section style="padding-bottom:0"><div class="wrap">{img}</div></section>'
