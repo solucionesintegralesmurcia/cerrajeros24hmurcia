@@ -27,7 +27,7 @@ header.site{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;b
 .head{padding-top:4px;padding-bottom:4px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
 .logo{flex-shrink:0;display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;line-height:1.1;font-size:1.02rem}
 .logo small{display:block;font-weight:500;font-size:.75rem;color:#c9d4e2}
-.logo img{height:62px;width:auto;border-radius:6px}
+.logo img{height:72px;width:auto}
 .head .head-call{display:none}
 nav.menu details{position:relative}
 nav.menu summary{list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:.45rem .8rem;font-weight:600;font-size:.95rem}
@@ -133,6 +133,7 @@ footer.site li{margin-bottom:.35rem}
   body{padding-bottom:0}
   .mobile-bar{display:none}
   .grid.three{grid-template-columns:repeat(3,1fr)}
+  .logo img{height:88px}
   .head .head-call{display:inline-flex;padding:.6rem 1rem;font-size:.98rem;white-space:nowrap}
   nav.menu details{display:none}
   nav.menu ul.desk{display:flex;gap:.1rem}
