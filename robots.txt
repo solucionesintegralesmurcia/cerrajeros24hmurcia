@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cerrajero24horasmurcia.es/sitemap.xml
+Sitemap: https://www.cerrajero24horasmurcia.es/sitemap.xml

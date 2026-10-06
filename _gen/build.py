@@ -3,7 +3,7 @@
 import json, os, html
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-DOM = "https://cerrajero24horasmurcia.es"
+DOM = "https://www.cerrajero24horasmurcia.es"
 NAME = "Cerrajero 24 Horas en Murcia"
 # --- Datos que debe cambiar el propietario (buscar y reemplazar) ---
 TEL_LINK = "+34622663157"     # p. ej. +34968123456
