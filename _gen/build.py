@@ -201,6 +201,7 @@ def page(slug, title, desc, body, schemas, robots="index,follow", root="", og_ty
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{css}">
+<script defer src="/_vercel/insights/script.js"></script>
 {'<link rel="preload" as="image" href="img/cerrajero-24-horas-murcia.webp" fetchpriority="high">' if slug == "index.html" else ""}
 {ld}
 </head>
@@ -824,6 +825,8 @@ def build_legales():
 <p>La aplicación de medidas precontractuales a petición tuya (artículo 6.1.b del Reglamento General de Protección de Datos) y, en la gestión de reclamaciones, nuestro interés legítimo en controlar la calidad del servicio (artículo 6.1.f).</p>
 <h2>A quién se comunican</h2>
 <p>Al cerrajero colaborador que atiende tu servicio, que necesita tus datos para contactarte y desplazarse a tu dirección. También pueden acceder a ellos los proveedores que nos prestan los servicios de telefonía, correo y alojamiento web, con los que tenemos los contratos exigidos por la ley. No se ceden datos a otros terceros salvo obligación legal.</p>
+<h2>Estadísticas de la web</h2>
+<p>Medimos las visitas a la web con Vercel Web Analytics, sin cookies y de forma agregada y anónima (página visitada, procedencia, país, tipo de dispositivo y navegador), con el fin de mejorar la web. No permite identificarte. Más información en la <a href="politica-cookies.html">política de cookies</a>.</p>
 <h2>Cuánto tiempo los conservamos</h2>
 <p>El tiempo necesario para atender tu solicitud y, después, durante los plazos en que puedan derivarse responsabilidades legales.</p>
 <h2>Tus derechos</h2>
@@ -832,12 +835,14 @@ def build_legales():
 
     legal("politica-cookies.html", "Política de Cookies | Cerrajero 24 Horas en Murcia", "Política de cookies", f"""
 <h2>¿Usa cookies este sitio web?</h2>
-<p>Este sitio web no utiliza cookies propias ni de terceros con fines analíticos, publicitarios o de seguimiento. Por eso no te mostramos ningún aviso para aceptarlas.</p>
+<p>Este sitio web no utiliza cookies propias ni de terceros, ni con fines analíticos, publicitarios o de seguimiento. Por eso no te mostramos ningún aviso para aceptarlas.</p>
+<h2>Estadísticas de visitas sin cookies</h2>
+<p>Para saber cuántas personas visitan la web y qué páginas consultan, usamos <strong>Vercel Web Analytics</strong>, el servicio de estadísticas de nuestro proveedor de alojamiento. Funciona <strong>sin cookies</strong> y sin guardar nada en tu dispositivo: no te identifica personalmente ni te sigue en otras webs. Solo recoge datos agregados y anónimos, como la página visitada, la web de procedencia, el país y el tipo de dispositivo y navegador.</p>
 <h2>Enlaces a servicios externos</h2>
 <p>Los botones de WhatsApp abren la aplicación o la web de WhatsApp, que tiene su propia política de privacidad y de cookies.</p>
 <h2>Cambios en esta política</h2>
-<p>Si en el futuro se incorporan herramientas que usen cookies, como estadísticas de visitas, se actualizará esta página y se pedirá tu consentimiento cuando sea necesario.</p>""",
-          "Política de cookies de cerrajero24horasmurcia.es: este sitio no utiliza cookies de análisis, publicidad ni seguimiento.")
+<p>Si en el futuro se incorporan herramientas que usen cookies, se actualizará esta página y se pedirá tu consentimiento cuando sea necesario.</p>""",
+          "Política de cookies de cerrajero24horasmurcia.es: no usamos cookies. Las estadísticas de visitas se miden sin cookies con Vercel Web Analytics.")
 
 
 # ============================================================ 404
