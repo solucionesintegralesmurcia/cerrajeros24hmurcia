@@ -219,8 +219,6 @@ POSTS = [
 <li>Al terminar, exige la <strong>factura</strong> con los datos del profesional, el trabajo y el material.</li>
 </ul>
 
-<h2>Si algo sale mal</h2>
-<p>Tienes derecho a pedir la <strong>hoja de reclamaciones</strong> y a acudir a los servicios de consumo de tu ayuntamiento o de la Región de Murcia. Guarda la factura, los mensajes y cualquier prueba.</p>
 
 <h2>Cómo lo hacemos nosotros</h2>
 <p>Con nosotros, el cerrajero de guardia te da el precio por teléfono antes de salir, comprueba que la vivienda es tuya, intenta abrir sin romper y te entrega factura. Lo explicamos en <a href="como-trabajamos.html">cómo trabajamos</a>. Y si te has quedado fuera ahora mismo, lee también <a href="guia-te-has-quedado-fuera-de-casa.html">qué hacer si te has quedado fuera de casa</a>.</p>
@@ -228,8 +226,8 @@ POSTS = [
         "faqs": [
             ("¿Es normal que un cerrajero cobre más de noche o en festivo?",
              "Es habitual que el precio cambie según la hora, pero te lo deben decir por teléfono antes de salir, no al terminar el trabajo."),
-            ("¿Qué hago si me cobran mucho más de lo acordado?",
-             "Pide factura detallada y la hoja de reclamaciones, y acude a los servicios de consumo. Guarda los mensajes o la grabación donde se acordó el precio."),
+            ("¿Cómo sé que el precio que me dan es el final?",
+             "Pide que te digan por teléfono el precio total, con desplazamiento incluido, antes de que salga el cerrajero. Si al llegar el trabajo es distinto al que describiste, te lo tienen que explicar antes de empezar."),
         ],
     },
 ]
