@@ -4,7 +4,7 @@ Web estática en HTML con una hoja de estilos común (`styles.css`), desplegada 
 
 ## Modelo de negocio (IMPORTANTE)
 
-- Es una **red de cerrajeros colaboradores**: el titular recibe la llamada en su centralita y la pasa a proveedores que hacen el servicio 24 horas. La web lo dice con claridad en «Cómo trabajamos» y en el aviso legal. Nunca dar a entender que es una empresa con furgonetas o local propios.
+- El titular recibe la llamada y la pasa a cerrajeros profesionales que hacen el servicio 24 horas. **El propietario no quiere que la web insista en «red de colaboradores» ni en que es un intermediario**: los textos hablan de «el cerrajero de guardia de tu zona» y de «cerrajeros profesionales». Solo el aviso legal describe la intermediación. Nunca afirmar personal, furgonetas o local propios (sería publicidad engañosa).
 - Sin ficha de Google Business por ahora. Sin dirección física en la web ni en el schema (no usar `LocalBusiness`/`Locksmith`).
 - Totalmente independiente de las otras webs del propietario: no enlazarlas ni copiar sus textos.
 

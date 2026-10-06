@@ -223,7 +223,7 @@ POSTS = [
 <p>Tienes derecho a pedir la <strong>hoja de reclamaciones</strong> y a acudir a los servicios de consumo de tu ayuntamiento o de la Región de Murcia. Guarda la factura, los mensajes y cualquier prueba.</p>
 
 <h2>Cómo lo hacemos nosotros</h2>
-<p>En nuestra red de cerrajeros colaboradores, el cerrajero de guardia te da el precio por teléfono antes de salir, comprueba que la vivienda es tuya, intenta abrir sin romper y te entrega factura. Lo explicamos en <a href="como-trabajamos.html">cómo trabajamos</a>. Y si te has quedado fuera ahora mismo, lee también <a href="guia-te-has-quedado-fuera-de-casa.html">qué hacer si te has quedado fuera de casa</a>.</p>
+<p>Con nosotros, el cerrajero de guardia te da el precio por teléfono antes de salir, comprueba que la vivienda es tuya, intenta abrir sin romper y te entrega factura. Lo explicamos en <a href="como-trabajamos.html">cómo trabajamos</a>. Y si te has quedado fuera ahora mismo, lee también <a href="guia-te-has-quedado-fuera-de-casa.html">qué hacer si te has quedado fuera de casa</a>.</p>
 """,
         "faqs": [
             ("¿Es normal que un cerrajero cobre más de noche o en festivo?",

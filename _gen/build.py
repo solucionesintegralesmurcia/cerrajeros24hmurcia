@@ -77,7 +77,7 @@ def faq_schema(faqs):
 def org_schema():
     return {"@type": "Organization", "@id": DOM + "/#org", "name": NAME, "url": DOM + "/",
             "telephone": TEL_LINK, "logo": DOM + "/img/logo.png",
-            "description": "Red de cerrajeros colaboradores que atiende urgencias de cerrajería las 24 horas en Murcia y municipios cercanos."}
+            "description": "Servicio de cerrajería urgente las 24 horas en Murcia y municipios cercanos."}
 
 
 def service_schema(name, desc, slug, stype):
@@ -128,7 +128,7 @@ def footer(root="", slug=""):
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-grid">
 <div><h2>{NAME}</h2>
-<p>Red de cerrajeros colaboradores para urgencias en Murcia capital, barrios y pedanías. Un solo teléfono, a cualquier hora.</p>
+<p>Cerrajeros profesionales para urgencias en Murcia capital, barrios, pedanías y municipios cercanos. Un solo teléfono, a cualquier hora.</p>
 <p><a href="tel:{TEL_LINK}">📞 Llamar ahora</a><br><a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">💬 WhatsApp</a></p></div>
 <div><h2>Servicios</h2><ul>
 <li><a href="{root}apertura-de-puertas.html">Apertura de puertas</a></li>
@@ -273,8 +273,8 @@ def build_index():
     faqs = [
         ("¿De verdad cogéis el teléfono de madrugada?",
          "Sí. El número está desviado a cerrajeros de guardia las 24 horas, todos los días del año, incluidos domingos y festivos. Si es de noche, no tienes que dejar un mensaje ni esperar a que abra una tienda."),
-        ("¿Sois una empresa de cerrajería?",
-         "Somos una red de cerrajeros colaboradores que trabajan en Murcia. Tú llamas a un único número y la llamada pasa al profesional de guardia que está más cerca. El trabajo lo hace y lo factura ese cerrajero. Lo explicamos con detalle en <a href=\"como-trabajamos.html\">cómo trabajamos</a>."),
+        ("¿Quién viene a abrirme?",
+         "Un cerrajero profesional de Murcia, el que está de guardia más cerca de tu zona. Te da el precio por teléfono antes de salir, hace el trabajo y te entrega la factura. Lo explicamos en <a href=\"como-trabajamos.html\">cómo trabajamos</a>."),
         ("¿Cuánto cuesta abrir una puerta?",
          "Depende de si la puerta está solo cerrada de golpe o con la llave echada, del tipo de cerradura y de la hora. Por eso no publicamos una tarifa cerrada: el cerrajero te pregunta cómo es tu puerta y te da el precio por teléfono antes de salir. Si no te convence, no hay compromiso."),
         ("¿Cuánto tarda en llegar el cerrajero?",
@@ -635,38 +635,44 @@ def build_zonas():
 def build_como():
     trail = [("index.html", "Inicio"), ("como-trabajamos.html", "Cómo trabajamos")]
     faqs = [
-        ("¿Por qué una red de cerrajeros y no una sola empresa?",
-         "Porque un solo cerrajero no puede estar a la vez en El Palmar y en Churra a las tres de la mañana. Con varios profesionales de guardia repartidos por Murcia, siempre hay alguien disponible y más cerca de ti."),
-        ("¿Quién responde si hay un problema con el trabajo?",
-         "El cerrajero que hace el trabajo es quien lo factura y quien te da la garantía. Si tienes cualquier problema, escríbenos también a nosotros: queremos saberlo, porque solo trabajamos con profesionales que cumplen."),
+        ("¿Atendéis de verdad a cualquier hora?",
+         "Sí. El teléfono funciona las 24 horas, todos los días del año, también domingos y festivos. Siempre hay un cerrajero de guardia para Murcia y alrededores."),
+        ("¿Quién viene a mi casa?",
+         "Un cerrajero profesional de Murcia, el que está de guardia más cerca de tu zona. Es él quien te da el precio por teléfono, hace el trabajo y te entrega la factura."),
+        ("¿Me hacéis factura?",
+         "Sí, siempre. Pídela al terminar: es tu garantía si la cerradura o el bombín que te han puesto da algún problema."),
         ("¿Qué datos míos se guardan al llamar?",
-         "Solo los necesarios para atenderte: tu teléfono y, si nos la das, la dirección. Se comparten únicamente con el cerrajero que va a hacer el trabajo. Lo explicamos en la <a href=\"politica-privacidad.html\">política de privacidad</a>."),
+         "Solo los necesarios para atenderte: tu teléfono y, si nos la das, la dirección. Lo explicamos en la <a href=\"politica-privacidad.html\">política de privacidad</a>."),
     ]
     body = hero("Cómo trabajamos",
-                "Somos una red de cerrajeros colaboradores en Murcia. Te lo contamos claro, porque en este sector la confianza lo es todo.",
+                "Urgencias de cerrajería en Murcia con las cosas claras desde el primer minuto: precio antes de salir, apertura sin romper siempre que se pueda y factura.",
                 trail=trail, small=True)
     body += f"""
 <section><div class="wrap">
-<h2>Qué es Cerrajero 24 Horas en Murcia</h2>
-<p>Cerrajero 24 Horas en Murcia es un servicio que pone en contacto a quien necesita un cerrajero urgente con profesionales de cerrajería que trabajan en el municipio de Murcia. No somos una única empresa con furgonetas propias: somos el teléfono que te conecta, a cualquier hora, con el cerrajero de guardia de tu zona.</p>
-<p>El servicio de contacto es gratuito para ti. Pagas únicamente el trabajo que haga el cerrajero, al precio que él te ha dado por teléfono y aceptado por ti antes de salir.</p>
+<h2>Así funciona el servicio</h2>
+<ol class="steps">
+<li><strong>Llamas o nos envías un aviso</strong>A cualquier hora, por teléfono, por WhatsApp o desde el <a href="aviso-urgente.html">formulario de aviso urgente</a>.</li>
+<li><strong>Te atiende el cerrajero de guardia de tu zona</strong>Le cuentas qué ha pasado y cómo es la puerta. Con eso ya sabe qué herramientas llevar.</li>
+<li><strong>Te da el precio y el tiempo de llegada</strong>Antes de salir sabes lo que va a costar. Si te parece bien, va hacia tu dirección; si no, no hay ningún compromiso.</li>
+<li><strong>Resuelve el problema y te da la factura</strong>Comprueba que la vivienda es tuya, hace el trabajo y te entrega factura con el trabajo y el material.</li>
+</ol>
 </div></section>
 
 <section class="alt"><div class="wrap">
-<h2>Lo que pedimos a cada cerrajero de la red</h2>
+<h2>Nuestro compromiso contigo</h2>
 <ul class="list">
-<li><strong>Que sea un profesional dado de alta</strong>, autónomo o empresa, y que tenga seguro de responsabilidad civil.</li>
-<li><strong>Que dé el precio por teléfono antes de salir</strong> y lo respete, salvo que al llegar el trabajo sea distinto al descrito; en ese caso, te lo explica y decides tú antes de empezar.</li>
-<li><strong>Que compruebe que la vivienda es tuya</strong> o que vives en ella antes de abrir.</li>
-<li><strong>Que entregue factura</strong> a su nombre, con el trabajo realizado y el material instalado.</li>
-<li><strong>Que abra sin romper siempre que sea posible</strong> y explique por qué si no lo es.</li>
+<li><strong>Precio por teléfono antes de salir.</strong> Si al llegar el trabajo es distinto al que nos describiste, te lo explicamos y decides tú antes de empezar.</li>
+<li><strong>Apertura sin romper siempre que se pueda.</strong> Y si no es posible, te explicamos por qué.</li>
+<li><strong>Comprobamos que la vivienda es tuya</strong> o que vives en ella antes de abrir. Es por tu seguridad.</li>
+<li><strong>Factura siempre</strong>, con el trabajo realizado y el material instalado.</li>
+<li><strong>Cerrajeros profesionales</strong>, con experiencia en puertas blindadas, acorazadas, bombines de seguridad y cierres de local.</li>
 </ul>
 </div></section>
 
 <section><div class="wrap">
-<h2>Si algo no ha ido bien</h2>
-<p>Si el cerrajero no ha cumplido el precio acordado, no te ha dado factura o el trabajo tiene algún problema, escríbenos por <a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">WhatsApp</a> con la fecha, la dirección y lo que ha pasado. Lo revisamos con el profesional y, si no cumple con estas condiciones, deja de recibir avisos.</p>
-<p>Recuerda que también tienes derecho a pedir la hoja de reclamaciones y a acudir a la oficina de consumo del Ayuntamiento de Murcia o de la Región de Murcia.</p>
+<h2>Si tienes cualquier duda o problema</h2>
+<p>Escríbenos por <a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">WhatsApp</a> con la fecha, la dirección y lo que ha pasado, y lo resolvemos contigo. Recuerda que, como en cualquier servicio, también tienes derecho a pedir la hoja de reclamaciones.</p>
+<p>Si es tu primera vez con un cerrajero, te puede ayudar nuestra guía <a href="como-elegir-un-cerrajero-de-confianza.html">cómo elegir un cerrajero de confianza</a>.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">
@@ -675,9 +681,8 @@ def build_como():
 </div></section>
 {cta()}"""
     page("como-trabajamos.html", "Cómo Trabajamos | Cerrajero 24 Horas en Murcia",
-         "Somos una red de cerrajeros colaboradores en Murcia: precio por teléfono antes de salir, factura del profesional y apertura sin romper si es posible.",
+         "Cómo funciona nuestro servicio de cerrajería urgente en Murcia: precio por teléfono antes de salir, apertura sin romper si es posible y factura.",
          body, [faq_schema(faqs), crumbs_schema(trail)])
-
 
 # ============================================================ GUÍA
 def build_guia():
@@ -818,13 +823,13 @@ def build_legales():
 <p>Cuando nos llamas, nos escribes por WhatsApp o nos envías el formulario de aviso urgente (que se envía a través de WhatsApp) tratamos tu número de teléfono, tu nombre si nos lo das, la dirección donde necesitas el servicio y la información que nos cuentes sobre la incidencia.</p>
 <h2>Para qué los usamos</h2>
 <ul class="list">
-<li>Atender tu solicitud y ponerte en contacto con el cerrajero colaborador que va a realizar el trabajo.</li>
+<li>Atender tu solicitud y ponerte en contacto con el cerrajero que va a realizar el trabajo.</li>
 <li>Gestionar las incidencias o reclamaciones que nos comuniques sobre el servicio.</li>
 </ul>
 <h2>Base legal</h2>
 <p>La aplicación de medidas precontractuales a petición tuya (artículo 6.1.b del Reglamento General de Protección de Datos) y, en la gestión de reclamaciones, nuestro interés legítimo en controlar la calidad del servicio (artículo 6.1.f).</p>
 <h2>A quién se comunican</h2>
-<p>Al cerrajero colaborador que atiende tu servicio, que necesita tus datos para contactarte y desplazarse a tu dirección. También pueden acceder a ellos los proveedores que nos prestan los servicios de telefonía, correo y alojamiento web, con los que tenemos los contratos exigidos por la ley. No se ceden datos a otros terceros salvo obligación legal.</p>
+<p>Al cerrajero que atiende tu servicio, que necesita tus datos para contactarte y desplazarse a tu dirección. También pueden acceder a ellos los proveedores que nos prestan los servicios de telefonía, correo y alojamiento web, con los que tenemos los contratos exigidos por la ley. No se ceden datos a otros terceros salvo obligación legal.</p>
 <h2>Estadísticas de la web</h2>
 <p>Medimos las visitas a la web con Vercel Web Analytics, sin cookies y de forma agregada y anónima (página visitada, procedencia, país, tipo de dispositivo y navegador), con el fin de mejorar la web. No permite identificarte. Más información en la <a href="politica-cookies.html">política de cookies</a>.</p>
 <h2>Cuánto tiempo los conservamos</h2>
