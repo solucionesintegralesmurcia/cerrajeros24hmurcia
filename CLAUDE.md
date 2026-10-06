@@ -20,3 +20,10 @@ Web estática en HTML con una hoja de estilos común (`styles.css`), desplegada 
 - Formato de respuesta: resumen → propuesta → riesgo → lo que se le escapa → siguiente paso.
 - Enlaces internos relativos con `.html`; en `404.html` empiezan por `/`.
 - Agrupar cada petición en un solo commit.
+
+## Cómo se genera la web
+
+- Las páginas HTML, `sitemap.xml` y `robots.txt` se generan con `python3 _gen/build.py` (necesita Pillow). No editar los HTML a mano: cambiar los textos en `_gen/` y volver a generar.
+- Contenido: `_gen/zonas_data.py` (zonas), `_gen/servicios_data.py` (servicios), `_gen/blog_data.py` (guías), `_gen/extra_content.py` (secciones y preguntas añadidas). Teléfono, dominio y titular, al principio de `_gen/build.py`.
+- `_gen/check.py .` revisa un H1 por página, JSON-LD y enlaces rotos. `_gen/` no se publica (`.vercelignore`).
+- La portada empieza con el formulario de aviso urgente, que abre WhatsApp con el mensaje ya escrito al teléfono del negocio.
