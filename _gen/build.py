@@ -786,7 +786,7 @@ def legal(slug, title, h1, content, desc):
 
 TITULAR = "Alberto López"
 NIF = "[NIF]"
-DOMICILIO = "Murcia"
+DOMICILIO = "España"
 
 
 def build_legales():
@@ -796,7 +796,6 @@ def build_legales():
 <ul class="list">
 <li>Titular: {NAME}</li>
 <li>Domicilio: {DOMICILIO}</li>
-<li>Teléfono: {TEL_TXT}</li>
 <li>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></li>
 <li>Sitio web: cerrajero24horasmurcia.es</li>
 </ul>
@@ -814,7 +813,7 @@ def build_legales():
 
     legal("politica-privacidad.html", "Política de Privacidad | Cerrajero 24 Horas en Murcia", "Política de privacidad", f"""
 <h2>Responsable del tratamiento</h2>
-<p>{NAME}, con domicilio en {DOMICILIO}. Teléfono de contacto: {TEL_TXT}. Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<p>{NAME}, con domicilio en {DOMICILIO}. Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h2>Qué datos tratamos</h2>
 <p>Cuando nos llamas, nos escribes por WhatsApp o nos envías el formulario de aviso urgente (que se envía a través de WhatsApp) tratamos tu número de teléfono, tu nombre si nos lo das, la dirección donde necesitas el servicio y la información que nos cuentes sobre la incidencia.</p>
 <h2>Para qué los usamos</h2>
