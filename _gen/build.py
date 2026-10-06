@@ -149,7 +149,7 @@ def footer(root="", slug=""):
 </div>
 <div class="legal">© 2026 {NAME} · <a href="{root}aviso-legal.html">Aviso legal</a> · <a href="{root}politica-privacidad.html">Privacidad</a> · <a href="{root}politica-cookies.html">Cookies</a></div>
 </div></footer>
-<div class="mobile-bar"><a class="call" href="tel:{TEL_LINK}">{ICON_PHONE}Llamar</a><a class="wa" href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">{ICON_WA}WhatsApp</a><a class="urg" href="{aviso_href}">🚨 Aviso</a></div>
+<div class="mobile-bar"><a class="urg" href="{aviso_href}">🚨 Enviar aviso</a><a class="call" href="tel:{TEL_LINK}">{ICON_PHONE}Llamar</a><a class="wa" href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">{ICON_WA}WhatsApp</a></div>
 {'' if aviso_href.startswith("#") else f'<a class="float-aviso" href="{aviso_href}">🚨 ¿Urgencia? Envía un aviso</a>'}"""
 
 
@@ -240,19 +240,29 @@ def aviso_rapido():
     zopts = "".join(f"<option>{z}</option>" for z in zonas)
     qopts = "".join(f"<option>{q}</option>" for q in ["Me he quedado fuera", "Llave rota", "La cerradura no gira", "Robo o puerta forzada", "Cambiar bombín", "Coche", "Caja fuerte", "Persiana de local", "Otro problema"])
     return f"""<form id="aviso-rapido" class="quick" novalidate>
-<p class="quick-title">🚨 Aviso urgente por WhatsApp</p>
+<p class="quick-title">🚨 Aviso urgente: te contestamos al momento</p>
 <label>¿Qué pasa?<select name="que" required><option value="">Elige una opción</option>{qopts}</select></label>
 <label>¿Dónde estás?<select name="zona" required><option value="">Elige tu zona</option>{zopts}</select></label>
+<label>Dirección<input name="dir" autocomplete="street-address" required placeholder="Calle, número y piso"></label>
+<label>Tu nombre<input name="nombre" autocomplete="given-name" required placeholder="Nombre"></label>
+<label class="quick-check"><input type="checkbox" name="blindada"> Es una puerta blindada o acorazada</label>
 <p class="quick-err" role="alert"></p>
-<button class="btn btn-wa full" type="submit">{ICON_WA}Enviar aviso</button>
-<p class="quick-note">Te contestamos al momento. Al enviarlo aceptas la <a href="politica-privacidad.html">privacidad</a>. ¿Más detalles? <a href="aviso-urgente.html">Aviso completo</a>.</p>
+<button class="btn btn-wa full" type="submit">{ICON_WA}Enviar aviso por WhatsApp</button>
+<p class="quick-note">Se abre WhatsApp con el aviso escrito: solo pulsa enviar y, si puedes, añade una foto de la cerradura. Al enviarlo aceptas la <a href="politica-privacidad.html">privacidad</a>.</p>
+<p class="quick-call">¿Prefieres hablar? <a href="tel:{TEL_LINK}">Llamar ahora</a></p>
 </form>
 <script>
 document.getElementById('aviso-rapido').addEventListener('submit', function (e) {{
   e.preventDefault();
-  var f = e.target, q = f.elements['que'].value, z = f.elements['zona'].value;
-  if (!q || !z) {{ f.querySelector('.quick-err').textContent = 'Elige qué pasa y dónde estás.'; return; }}
-  var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\\n🔧 Qué pasa: ' + q + '\\n🗺️ Zona: ' + z;
+  var f = e.target, v = function (n) {{ return (f.elements[n].value || '').trim(); }};
+  if (!v('que') || !v('zona') || !v('dir') || !v('nombre')) {{ f.querySelector('.quick-err').textContent = 'Completa qué pasa, la zona, la dirección y tu nombre.'; return; }}
+  var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\\n' +
+    '🔧 Qué pasa: ' + v('que') + '\\n' +
+    '🗺️ Zona: ' + v('zona') + '\\n' +
+    '🏠 Dirección: ' + v('dir') + '\\n' +
+    '🚪 Puerta: ' + (f.elements['blindada'].checked ? 'blindada o acorazada' : 'normal / no lo sé') + '\\n' +
+    '👤 Nombre: ' + v('nombre') + '\\n' +
+    '📷 (Te envío una foto de la cerradura si puedo)';
   window.location.href = 'https://wa.me/{WA}?text=' + encodeURIComponent(msg);
 }});
 </script>"""
@@ -262,9 +272,9 @@ def hero_home(h1, lead, bg=None, chips=None):
     ch = '<ul class="chips">' + "".join(f"<li>{c}</li>" for c in chips) + "</ul>" if chips else ""
     style = f' style="background-image:linear-gradient(90deg,rgba(15,31,51,.94) 0%,rgba(15,31,51,.82) 55%,rgba(15,31,51,.45) 100%),url(img/{bg})"' if bg else ""
     return f"""<section class="hero has-bg"{style}><div class="wrap home-grid">
-<div class="h-text"><h1>{h1}</h1><p class="lead">{lead}</p>
-<div class="btns">{call_btn()}{wa_btn()}</div>{ch}</div>
+<div class="h-head"><h1>{h1}</h1><p class="lead">{lead}</p></div>
 <div class="h-form">{aviso_rapido()}</div>
+<div class="h-actions"><div class="btns">{wa_btn()}{call_btn("Llamar", "btn btn-ghost")}</div>{ch}</div>
 </div></section>"""
 
 
@@ -1007,7 +1017,8 @@ document.getElementById('aviso').addEventListener('submit', function (e) {{
     (v('dir') ? '🏠 Dirección: ' + v('dir') + '\\n' : '') +
     '👤 Nombre: ' + v('nombre') + '\\n' +
     '📞 Teléfono: ' + tel + '\\n' +
-    (v('det') ? '📝 Detalles: ' + v('det') : '');
+    (v('det') ? '📝 Detalles: ' + v('det') + '\\n' : '') +
+    '📷 (Te envío una foto de la cerradura si puedo)';
   window.location.href = 'https://wa.me/{WA}?text=' + encodeURIComponent(msg);
 }});
 </script>"""
