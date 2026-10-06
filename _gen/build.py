@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Genera la web estática de cerrajero24horasmurcia.es en la raíz del repositorio"""
-import json, os, html
+import json, os, html, hashlib
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 DOM = "https://www.cerrajero24horasmurcia.es"
@@ -11,6 +11,7 @@ TEL_TXT = "622 66 31 57"      # p. ej. 968 12 34 56
 WA = "34622663157"            # p. ej. 34612345678 (sin +)
 EMAIL = "info@cerrajero24horasmurcia.es"
 UPDATED = "2026-10-06"
+CSS_VER = hashlib.md5(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "styles.css"), "rb").read()).hexdigest()[:8]
 import sys as _s0; _s0.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from extra_content import EXTRA, EXTRA_FAQ
 PHOTOS = {
@@ -123,7 +124,7 @@ def header(slug, root=""):
 
 
 def footer(root="", slug=""):
-    aviso_href = "#aviso" if slug in ("index.html", "aviso-urgente.html") else f"{root}aviso-urgente.html"
+    aviso_href = {"index.html": "#aviso-rapido", "aviso-urgente.html": "#aviso"}.get(slug, f"{root}aviso-urgente.html")
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-grid">
 <div><h2>{NAME}</h2>
@@ -149,7 +150,7 @@ def footer(root="", slug=""):
 <div class="legal">© 2026 {NAME} · <a href="{root}aviso-legal.html">Aviso legal</a> · <a href="{root}politica-privacidad.html">Privacidad</a> · <a href="{root}politica-cookies.html">Cookies</a></div>
 </div></footer>
 <div class="mobile-bar"><a class="call" href="tel:{TEL_LINK}">{ICON_PHONE}Llamar</a><a class="wa" href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">{ICON_WA}WhatsApp</a><a class="urg" href="{aviso_href}">🚨 Aviso</a></div>
-{'' if aviso_href == "#aviso" else f'<a class="float-aviso" href="{aviso_href}">🚨 ¿Urgencia? Envía un aviso</a>'}"""
+{'' if aviso_href.startswith("#") else f'<a class="float-aviso" href="{aviso_href}">🚨 ¿Urgencia? Envía un aviso</a>'}"""
 
 
 def page(slug, title, desc, body, schemas, robots="index,follow", root="", og_type="website"):
@@ -175,7 +176,7 @@ def page(slug, title, desc, body, schemas, robots="index,follow", root="", og_ty
     canon = url(slug)
     ld = "\n".join(
         f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schemas)
-    css = f"{root}styles.css"
+    css = f"{root}styles.css?v={CSS_VER}"
     doc = f"""<!doctype html>
 <html lang="es">
 <head>
@@ -232,14 +233,36 @@ def hero(h1, lead, trail=None, chips=None, small=False, bg=None):
 <p class="aviso-link"><a href="aviso-urgente.html">¿Prefieres escribir? Envía un aviso urgente con tus datos →</a></p>{ch}</div></section>"""
 
 
+def aviso_rapido():
+    zonas = ["Murcia (centro y barrios)"] + [z.get("short", z["name"]) for z in ZONAS if z["slug"] != "cerrajero-centro-murcia.html"] + ["Otra zona"]
+    zopts = "".join(f"<option>{z}</option>" for z in zonas)
+    qopts = "".join(f"<option>{q}</option>" for q in ["Me he quedado fuera", "Llave rota", "La cerradura no gira", "Robo o puerta forzada", "Cambiar bombín", "Coche", "Caja fuerte", "Persiana de local", "Otro problema"])
+    return f"""<form id="aviso-rapido" class="quick" novalidate>
+<p class="quick-title">🚨 Aviso urgente por WhatsApp</p>
+<label>¿Qué pasa?<select name="que" required><option value="">Elige una opción</option>{qopts}</select></label>
+<label>¿Dónde estás?<select name="zona" required><option value="">Elige tu zona</option>{zopts}</select></label>
+<p class="quick-err" role="alert"></p>
+<button class="btn btn-wa full" type="submit">{ICON_WA}Enviar aviso</button>
+<p class="quick-note">Te contestamos al momento. Al enviarlo aceptas la <a href="politica-privacidad.html">privacidad</a>. ¿Más detalles? <a href="aviso-urgente.html">Aviso completo</a>.</p>
+</form>
+<script>
+document.getElementById('aviso-rapido').addEventListener('submit', function (e) {{
+  e.preventDefault();
+  var f = e.target, q = f.elements['que'].value, z = f.elements['zona'].value;
+  if (!q || !z) {{ f.querySelector('.quick-err').textContent = 'Elige qué pasa y dónde estás.'; return; }}
+  var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\\n🔧 Qué pasa: ' + q + '\\n🗺️ Zona: ' + z;
+  window.location.href = 'https://wa.me/{WA}?text=' + encodeURIComponent(msg);
+}});
+</script>"""
+
+
 def hero_home(h1, lead, bg=None, chips=None):
     ch = '<ul class="chips">' + "".join(f"<li>{c}</li>" for c in chips) + "</ul>" if chips else ""
-    style = f' style="background-image:linear-gradient(90deg,rgba(15,31,51,.94) 0%,rgba(15,31,51,.85) 55%,rgba(15,31,51,.6) 100%),url(img/{bg})"' if bg else ""
-    return f"""<section class="hero has-bg home"{style}><div class="wrap home-grid">
-<h1 class="h-title">{h1}</h1>
-<div class="h-form">{aviso_form(compact=True)}</div>
-<div class="h-text"><p class="lead">{lead}</p>
+    style = f' style="background-image:linear-gradient(90deg,rgba(15,31,51,.94) 0%,rgba(15,31,51,.82) 55%,rgba(15,31,51,.45) 100%),url(img/{bg})"' if bg else ""
+    return f"""<section class="hero has-bg"{style}><div class="wrap home-grid">
+<div class="h-text"><h1>{h1}</h1><p class="lead">{lead}</p>
 <div class="btns">{call_btn()}{wa_btn()}</div>{ch}</div>
+<div class="h-form">{aviso_rapido()}</div>
 </div></section>"""
 
 

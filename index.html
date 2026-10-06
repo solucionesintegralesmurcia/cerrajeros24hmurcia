@@ -20,7 +20,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=786b8aa7">
 <link rel="preload" as="image" href="img/cerrajero-24-horas-murcia.webp" fetchpriority="high">
 <script type="application/ld+json">{"@type": "Organization", "@id": "https://www.cerrajero24horasmurcia.es/#org", "name": "Cerrajero 24 Horas en Murcia", "url": "https://www.cerrajero24horasmurcia.es/", "telephone": "+34622663157", "logo": "https://www.cerrajero24horasmurcia.es/img/logo.png", "description": "Red de cerrajeros colaboradores que atiende urgencias de cerrajería las 24 horas en Murcia y municipios cercanos.", "@context": "https://schema.org"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Cerrajero 24 Horas en Murcia", "url": "https://www.cerrajero24horasmurcia.es/", "inLanguage": "es-ES", "publisher": {"@id": "https://www.cerrajero24horasmurcia.es/#org"}}</script>
@@ -38,51 +38,26 @@
 <a class="btn btn-call head-call" href="tel:+34622663157"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar</a>
 </div></header>
 <main>
-<section class="hero has-bg home" style="background-image:linear-gradient(90deg,rgba(15,31,51,.94) 0%,rgba(15,31,51,.85) 55%,rgba(15,31,51,.6) 100%),url(img/cerrajero-24-horas-murcia.webp)"><div class="wrap home-grid">
-<h1 class="h-title">Cerrajero 24 horas en Murcia</h1>
-<div class="h-form"><form id="aviso" class="aviso compact" novalidate>
-<p class="aviso-title">🚨 Aviso urgente: te contactamos al momento</p>
-<fieldset><legend>1. ¿Dónde es?</legend><div class="opts"><label class="opt"><input type="radio" name="donde" value="Casa o piso" required><span>Casa o piso</span></label><label class="opt"><input type="radio" name="donde" value="Comunidad" required><span>Comunidad</span></label><label class="opt"><input type="radio" name="donde" value="Negocio" required><span>Negocio</span></label><label class="opt"><input type="radio" name="donde" value="Coche" required><span>Coche</span></label></div></fieldset>
-<fieldset><legend>2. ¿Qué pasa?</legend><div class="opts"><label class="opt"><input type="radio" name="que" value="Me he quedado fuera" required><span>Me he quedado fuera</span></label><label class="opt"><input type="radio" name="que" value="Llave rota" required><span>Llave rota</span></label><label class="opt"><input type="radio" name="que" value="La cerradura no gira" required><span>La cerradura no gira</span></label><label class="opt"><input type="radio" name="que" value="Robo o puerta forzada" required><span>Robo o puerta forzada</span></label><label class="opt"><input type="radio" name="que" value="Cambiar bombín" required><span>Cambiar bombín</span></label><label class="opt"><input type="radio" name="que" value="Caja fuerte" required><span>Caja fuerte</span></label><label class="opt"><input type="radio" name="que" value="Persiana de local" required><span>Persiana de local</span></label><label class="opt"><input type="radio" name="que" value="Otro problema" required><span>Otro problema</span></label></div></fieldset>
-<fieldset><legend>3. Tus datos</legend>
-<div class="fields">
-<label>Tipo de puerta<select name="puerta"><option>No lo sé</option><option>Normal de madera</option><option>Blindada</option><option>Acorazada</option><option>Cancela o puerta de calle</option><option>Persiana metálica</option></select></label>
-<label>Localidad<select name="zona" required><option value="">Elige tu zona</option><option>Murcia (centro y barrios)</option><option>Molina de Segura</option><option>Alcantarilla</option><option>El Palmar</option><option>Puente Tocinos</option><option>Espinardo y Churra</option><option>Cabezo de Torres</option><option>La Alberca y Santo Ángel</option><option>Beniaján y Torreagüera</option><option>Campo de Murcia</option><option>Sangonera la Verde</option><option>Algezares y Los Garres</option><option>Guadalupe y La Ñora</option><option>Las Torres de Cotillas</option><option>Santomera</option><option>El Carmen</option><option>Vistalegre y La Flota</option><option>Santiago y Zaraiche</option><option>Monteagudo y El Esparragal</option><option>Llano de Brujas y El Raal</option><option>Javalí y Sangonera la Seca</option><option>Aljucer y Era Alta</option><option>Otra zona de Murcia</option><option>Otro municipio</option></select></label>
-<label class="full">Dirección (opcional)<input name="dir" autocomplete="street-address" placeholder="Calle, número, piso o urbanización"></label>
-<label>Nombre<input name="nombre" autocomplete="name" required placeholder="Tu nombre"></label>
-<label>Teléfono<input name="tel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="6XX XXX XXX"></label>
-<label class="full">Detalles (opcional)<textarea name="det" rows="3" placeholder="Ej.: la puerta se ha cerrado de golpe y las llaves están dentro"></textarea></label>
-</div></fieldset>
-<label class="check"><input type="checkbox" name="ok" required> He leído la <a href="politica-privacidad.html">política de privacidad</a> y acepto que mis datos se compartan con el cerrajero que atienda el aviso.</label>
-<p class="err" id="err" role="alert"></p>
-<button class="btn btn-wa full" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>Enviar aviso por WhatsApp</button>
-<p class="muted small">Se abrirá WhatsApp con el mensaje ya escrito. Solo tienes que pulsar enviar.</p>
+<section class="hero has-bg" style="background-image:linear-gradient(90deg,rgba(15,31,51,.94) 0%,rgba(15,31,51,.82) 55%,rgba(15,31,51,.45) 100%),url(img/cerrajero-24-horas-murcia.webp)"><div class="wrap home-grid">
+<div class="h-text"><h1>Cerrajero 24 horas en Murcia</h1><p class="lead">¿Te has quedado fuera, se ha partido la llave o la cerradura no gira? Llama a cualquier hora y te ponemos al momento con un cerrajero de guardia en Murcia. Te da el precio por teléfono antes de salir.</p>
+<div class="btns"><a class="btn btn-call" href="tel:+34622663157"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar ahora</a><a class="btn btn-wa" href="https://wa.me/34622663157?text=Hola%2C%20necesito%20un%20cerrajero%20en%20Murcia" rel="nofollow noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>WhatsApp</a></div><ul class="chips"><li>Abierto 24 h · 365 días</li><li>Murcia capital y pedanías</li><li>Precio antes de salir</li><li>Apertura sin romper siempre que se pueda</li></ul></div>
+<div class="h-form"><form id="aviso-rapido" class="quick" novalidate>
+<p class="quick-title">🚨 Aviso urgente por WhatsApp</p>
+<label>¿Qué pasa?<select name="que" required><option value="">Elige una opción</option><option>Me he quedado fuera</option><option>Llave rota</option><option>La cerradura no gira</option><option>Robo o puerta forzada</option><option>Cambiar bombín</option><option>Coche</option><option>Caja fuerte</option><option>Persiana de local</option><option>Otro problema</option></select></label>
+<label>¿Dónde estás?<select name="zona" required><option value="">Elige tu zona</option><option>Murcia (centro y barrios)</option><option>Molina de Segura</option><option>Alcantarilla</option><option>El Palmar</option><option>Puente Tocinos</option><option>Espinardo y Churra</option><option>Cabezo de Torres</option><option>La Alberca y Santo Ángel</option><option>Beniaján y Torreagüera</option><option>Campo de Murcia</option><option>Sangonera la Verde</option><option>Algezares y Los Garres</option><option>Guadalupe y La Ñora</option><option>Las Torres de Cotillas</option><option>Santomera</option><option>El Carmen</option><option>Vistalegre y La Flota</option><option>Santiago y Zaraiche</option><option>Monteagudo y El Esparragal</option><option>Llano de Brujas y El Raal</option><option>Javalí y Sangonera la Seca</option><option>Aljucer y Era Alta</option><option>Otra zona</option></select></label>
+<p class="quick-err" role="alert"></p>
+<button class="btn btn-wa full" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>Enviar aviso</button>
+<p class="quick-note">Te contestamos al momento. Al enviarlo aceptas la <a href="politica-privacidad.html">privacidad</a>. ¿Más detalles? <a href="aviso-urgente.html">Aviso completo</a>.</p>
 </form>
 <script>
-document.getElementById('aviso').addEventListener('submit', function (e) {
+document.getElementById('aviso-rapido').addEventListener('submit', function (e) {
   e.preventDefault();
-  var f = e.target, err = document.getElementById('err');
-  var v = function (n) { var el = f.elements[n]; return el ? (el.value || '').trim() : ''; };
-  var r = function (n) { var c = f.querySelector('input[name="' + n + '"]:checked'); return c ? c.value : ''; };
-  var tel = v('tel').replace(/[^0-9+]/g, '');
-  if (!r('donde') || !r('que')) { err.textContent = 'Indica dónde es y qué pasa.'; return; }
-  if (!v('zona') || !v('nombre') || tel.length < 9) { err.textContent = 'Completa tu zona, tu nombre y un teléfono válido.'; return; }
-  if (!f.elements['ok'].checked) { err.textContent = 'Acepta la política de privacidad para enviar el aviso.'; return; }
-  err.textContent = '';
-  var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\n' +
-    '📍 Dónde: ' + r('donde') + '\n' +
-    '🔧 Qué pasa: ' + r('que') + '\n' +
-    '🚪 Puerta: ' + v('puerta') + '\n' +
-    '🗺️ Zona: ' + v('zona') + '\n' +
-    (v('dir') ? '🏠 Dirección: ' + v('dir') + '\n' : '') +
-    '👤 Nombre: ' + v('nombre') + '\n' +
-    '📞 Teléfono: ' + tel + '\n' +
-    (v('det') ? '📝 Detalles: ' + v('det') : '');
+  var f = e.target, q = f.elements['que'].value, z = f.elements['zona'].value;
+  if (!q || !z) { f.querySelector('.quick-err').textContent = 'Elige qué pasa y dónde estás.'; return; }
+  var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\n🔧 Qué pasa: ' + q + '\n🗺️ Zona: ' + z;
   window.location.href = 'https://wa.me/34622663157?text=' + encodeURIComponent(msg);
 });
 </script></div>
-<div class="h-text"><p class="lead">¿Te has quedado fuera, se ha partido la llave o la cerradura no gira? Llama a cualquier hora y te ponemos al momento con un cerrajero de guardia en Murcia. Te da el precio por teléfono antes de salir.</p>
-<div class="btns"><a class="btn btn-call" href="tel:+34622663157"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar ahora</a><a class="btn btn-wa" href="https://wa.me/34622663157?text=Hola%2C%20necesito%20un%20cerrajero%20en%20Murcia" rel="nofollow noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>WhatsApp</a></div><ul class="chips"><li>Abierto 24 h · 365 días</li><li>Murcia capital y pedanías</li><li>Precio antes de salir</li><li>Apertura sin romper siempre que se pueda</li></ul></div>
 </div></section>
 <section><div class="wrap">
 <h2>Urgencias de cerrajería en Murcia</h2>
@@ -197,7 +172,7 @@ document.getElementById('aviso').addEventListener('submit', function (e) {
 </div>
 <div class="legal">© 2026 Cerrajero 24 Horas en Murcia · <a href="aviso-legal.html">Aviso legal</a> · <a href="politica-privacidad.html">Privacidad</a> · <a href="politica-cookies.html">Cookies</a></div>
 </div></footer>
-<div class="mobile-bar"><a class="call" href="tel:+34622663157"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar</a><a class="wa" href="https://wa.me/34622663157?text=Hola%2C%20necesito%20un%20cerrajero%20en%20Murcia" rel="nofollow noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>WhatsApp</a><a class="urg" href="#aviso">🚨 Aviso</a></div>
+<div class="mobile-bar"><a class="call" href="tel:+34622663157"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar</a><a class="wa" href="https://wa.me/34622663157?text=Hola%2C%20necesito%20un%20cerrajero%20en%20Murcia" rel="nofollow noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.08 4.9 4.9 0 0 0 1.02 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.69 2.23.75 3.03.63a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .15-1.2c-.06-.1-.23-.17-.48-.29z"/></svg>WhatsApp</a><a class="urg" href="#aviso-rapido">🚨 Aviso</a></div>
 
 </body>
 </html>
