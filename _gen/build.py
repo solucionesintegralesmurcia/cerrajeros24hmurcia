@@ -129,7 +129,7 @@ def footer(root="", slug=""):
 <div class="foot-grid">
 <div><h2>{NAME}</h2>
 <p>Red de cerrajeros colaboradores para urgencias en Murcia capital, barrios y pedanías. Un solo teléfono, a cualquier hora.</p>
-<p><a href="tel:{TEL_LINK}">📞 {TEL_TXT}</a><br><a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">💬 WhatsApp</a></p></div>
+<p><a href="tel:{TEL_LINK}">📞 Llamar ahora</a><br><a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank">💬 WhatsApp</a></p></div>
 <div><h2>Servicios</h2><ul>
 <li><a href="{root}apertura-de-puertas.html">Apertura de puertas</a></li>
 <li><a href="{root}cambio-de-cerraduras.html">Cambio de cerraduras y bombines</a></li>
@@ -220,7 +220,7 @@ def page(slug, title, desc, body, schemas, robots="index,follow", root="", og_ty
 
 def cta(title="¿Necesitas un cerrajero ahora?", text="Llama y te pasamos con el cerrajero de guardia de tu zona. Te dirá qué hay que hacer y cuánto cuesta antes de salir."):
     return f"""<section><div class="wrap"><div class="cta"><h2>{title}</h2><p>{text}</p>
-<div class="btns">{call_btn("Llamar: " + TEL_TXT)}{wa_btn()}</div></div></div></section>"""
+<div class="btns">{call_btn("Llamar ahora")}{wa_btn()}</div></div></div></section>"""
 
 
 def hero(h1, lead, trail=None, chips=None, small=False, bg=None):
@@ -756,7 +756,7 @@ def build_contacto():
     body += f"""
 <section><div class="wrap">
 <div class="grid">
-<div class="card"><div class="ico">{ICON_PHONE.replace('fill="currentColor"', 'fill="#0f1f33"')}</div><h2>Teléfono 24 horas</h2><p><a href="tel:{TEL_LINK}"><strong>{TEL_TXT}</strong></a></p><p class="muted">Todos los días, a cualquier hora. Es la vía más rápida para una urgencia.</p></div>
+<div class="card"><div class="ico">{ICON_PHONE.replace('fill="currentColor"', 'fill="#0f1f33"')}</div><h2>Teléfono 24 horas</h2><p><a href="tel:{TEL_LINK}"><strong>Llamar ahora</strong></a></p><p class="muted">Todos los días, a cualquier hora. Es la vía más rápida para una urgencia.</p></div>
 <div class="card"><div class="ico">{ICON_WA.replace('fill="currentColor"', 'fill="#0f1f33"')}</div><h2>WhatsApp</h2><p><a href="https://wa.me/{WA}?text={WA_MSG}" rel="nofollow noopener" target="_blank"><strong>Escribir por WhatsApp</strong></a></p><p class="muted">Manda tu ubicación y una foto de la cerradura o de la llave.</p></div>
 </div>
 </div></section>
@@ -1018,7 +1018,7 @@ def build_aviso():
     body = f"""<section class="hero small"><div class="wrap">{crumbs_html(trail)}
 <h1>Aviso urgente de cerrajería</h1>
 <p class="lead">Rellena el aviso en un minuto: nos llega al momento por WhatsApp con todos los datos y el cerrajero de guardia de tu zona se pone en contacto contigo.</p>
-<div class="btns">{call_btn("Llamar ahora: " + TEL_TXT)}</div></div></section>
+<div class="btns">{call_btn("Llamar ahora")}</div></div></section>
 
 <section><div class="wrap aviso-grid">
 <div>
