@@ -245,6 +245,7 @@ def aviso_rapido():
 <label>¿Dónde estás?<select name="zona" required><option value="">Elige tu zona</option>{zopts}</select></label>
 <label>Dirección<input name="dir" autocomplete="street-address" required placeholder="Calle, número y piso"></label>
 <label>Tu nombre<input name="nombre" autocomplete="given-name" required placeholder="Nombre"></label>
+<label>Teléfono de contacto<input name="tel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="6XX XXX XXX"></label>
 <label class="quick-check"><input type="checkbox" name="blindada"> Es una puerta blindada o acorazada</label>
 <p class="quick-err" role="alert"></p>
 <button class="btn btn-wa full" type="submit">{ICON_WA}Enviar aviso por WhatsApp</button>
@@ -255,13 +256,15 @@ def aviso_rapido():
 document.getElementById('aviso-rapido').addEventListener('submit', function (e) {{
   e.preventDefault();
   var f = e.target, v = function (n) {{ return (f.elements[n].value || '').trim(); }};
-  if (!v('que') || !v('zona') || !v('dir') || !v('nombre')) {{ f.querySelector('.quick-err').textContent = 'Completa qué pasa, la zona, la dirección y tu nombre.'; return; }}
+  var tel = v('tel').replace(/[^0-9+]/g, '');
+  if (!v('que') || !v('zona') || !v('dir') || !v('nombre') || tel.length < 9) {{ f.querySelector('.quick-err').textContent = 'Completa qué pasa, la zona, la dirección, tu nombre y un teléfono válido.'; return; }}
   var msg = '🚨 AVISO URGENTE DE CERRAJERÍA\\n' +
     '🔧 Qué pasa: ' + v('que') + '\\n' +
     '🗺️ Zona: ' + v('zona') + '\\n' +
     '🏠 Dirección: ' + v('dir') + '\\n' +
     '🚪 Puerta: ' + (f.elements['blindada'].checked ? 'blindada o acorazada' : 'normal / no lo sé') + '\\n' +
     '👤 Nombre: ' + v('nombre') + '\\n' +
+    '📞 Teléfono: ' + tel + '\\n' +
     '📷 (Te envío una foto de la cerradura si puedo)';
   window.location.href = 'https://wa.me/{WA}?text=' + encodeURIComponent(msg);
 }});

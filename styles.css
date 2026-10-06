@@ -196,7 +196,7 @@ nav.menu a.urg:hover{background:#b92b2b}
 .h-head{grid-area:head}.h-form{grid-area:form}.h-actions{grid-area:actions}
 .h-head .lead{margin-bottom:0}
 .h-actions .btns{margin-top:0}
-.quick input[type=text],.quick input:not([type]),.quick input[name=dir],.quick input[name=nombre]{font:inherit;font-weight:400;color:var(--text);padding:.65rem .7rem;border:1px solid #c9d1dc;border-radius:10px;background:#fff;width:100%;min-width:0}
+.quick input[type=text],.quick input:not([type]),.quick input[name=dir],.quick input[name=nombre],.quick input[name=tel]{font:inherit;font-weight:400;color:var(--text);padding:.65rem .7rem;border:1px solid #c9d1dc;border-radius:10px;background:#fff;width:100%;min-width:0}
 .quick-check{flex-direction:row !important;align-items:center;gap:.5rem !important;font-weight:600 !important}
 .quick-check input{width:18px;height:18px}
 .quick-call{margin:0;font-size:.9rem;color:var(--muted);text-align:center}
